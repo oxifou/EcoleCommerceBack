@@ -37,6 +37,9 @@ public class Question implements Serializable
 	
 	@OneToMany(mappedBy="question")
 	private List<Proposition> propositions;
+	
+	@OneToMany(mappedBy="question")
+	private List<Reponse> reponses;
 
 	public Question()
 	{
