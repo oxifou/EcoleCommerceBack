@@ -9,21 +9,21 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.formation.dao.IDAO;
-import fr.formation.model.Questionnaire;
+import fr.formation.model.Matiere;
 
-@Repository("QuestionnaireDAO")
+@Repository("MatiereDAO")
 @Transactional
-public class QuestionnaireHibernateDAO implements IDAO<Questionnaire, Integer>
+public class MatiereHibernateDAO implements IDAO<Matiere, Integer>
 {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-	
+
 	@Override
-	public List<Questionnaire> findAll()
+	public List<Matiere> findAll()
 	{
 		try {
-			return this.entityManager.createQuery("from questionnaire", Questionnaire.class).getResultList();
+			return this.entityManager.createQuery("from matiere", Matiere.class).getResultList();
 		}
 		
 		catch (Exception e) {
@@ -34,10 +34,10 @@ public class QuestionnaireHibernateDAO implements IDAO<Questionnaire, Integer>
 	}
 
 	@Override
-	public Questionnaire find(Integer id)
+	public Matiere find(Integer id)
 	{
 		try {
-			return this.entityManager.find(Questionnaire.class, id);
+			return this.entityManager.find(Matiere.class, id);
 		}
 		
 		catch (Exception e) {
@@ -48,28 +48,29 @@ public class QuestionnaireHibernateDAO implements IDAO<Questionnaire, Integer>
 	}
 
 	@Override
-	public Questionnaire save(Questionnaire questionnaire)
+	public Matiere save(Matiere matiere)
 	{
 		try {
-			return this.entityManager.merge(questionnaire);
+			return this.entityManager.merge(matiere);
 		}
 		
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		return questionnaire;
+		return matiere;
 	}
 
 	@Override
-	public void delete(Questionnaire questionnaire)
+	public void delete(Matiere matiere)
 	{
 		try {
-			this.entityManager.remove(this.entityManager.merge(questionnaire));
+			this.entityManager.remove(this.entityManager.merge(matiere));
 		}
 		
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 }
