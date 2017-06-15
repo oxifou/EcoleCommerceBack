@@ -36,22 +36,41 @@ public class TestHibernateDAO implements IDAO<Test, Integer>
 	@Override
 	public Test find(Integer id)
 	{
-		// TODO Auto-generated method stub
+		try {
+			return this.entityManager.find(Test.class, id);
+		}
+		
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
 	@Override
 	public Test save(Test test)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			return this.entityManager.merge(test);
+		}
+		
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return test;
 	}
 
 	@Override
 	public void delete(Test test)
 	{
-		// TODO Auto-generated method stub
-
+		try {
+			this.entityManager.remove(this.entityManager.merge(test));
+		}
+		
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
