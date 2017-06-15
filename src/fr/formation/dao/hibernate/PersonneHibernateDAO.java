@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.formation.exception.WrongUsernameOrPasswordException;
 import fr.formation.dao.IPersonneDAO;
 import fr.formation.model.Personne;
 
@@ -68,4 +69,18 @@ public class PersonneHibernateDAO implements IPersonneDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	public Personne auth(String username, String password) throws WrongUsernameOrPasswordException {
+		try {
+			return this.entityManager.createQuery("from Peronne p where u.username = :username AND u.password = :password", Personne.class)
+					.setParameter("username", username)
+					.setParameter("password", password)
+					.getSingleResult();
+		}
+		
+		catch (Exception e) {
+			throw new WrongUsernameOrPasswordException();
+		}
+	}
 }
+
