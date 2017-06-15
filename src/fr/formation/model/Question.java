@@ -1,15 +1,41 @@
 package fr.formation.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Question
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="question")
+public class Question implements Serializable
 {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="QUESTION_ID")
 	private Integer idQuestion;
+	
+	@Column(name="QUESTION_INTI")
 	private String intitule;
+	
+	@Column(name="QUESTION_NUM")
 	private Integer numero;
 
+	@OneToOne
 	private Questionnaire questionnaire;
+	
+	@OneToMany(mappedBy="question")
 	private List<Proposition> propositions;
 
 	public Question()
