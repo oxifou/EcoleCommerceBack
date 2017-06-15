@@ -9,9 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -32,14 +31,14 @@ public class Questionnaire implements Serializable
 	@Column(name="QUESTIONAIRE_DUREE")
 	private Integer Duree;
 	
-	@ManyToMany
+	@OneToMany
 	@JoinColumn(name="QUESTIONNAIRE_TEST_ID")
 	private List<Test> tests;
 	
 	@OneToMany(mappedBy="questionnaire")
 	private List<Question> question;
 	
-	@OneToOne(mappedBy = "questionnaires")
+	@ManyToOne
 	private Matiere matiere;
 	
 	public Questionnaire()

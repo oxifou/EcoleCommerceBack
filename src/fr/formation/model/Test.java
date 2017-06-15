@@ -41,6 +41,10 @@ public class Test implements Serializable
 	
 	@OneToMany(mappedBy="tests")
 	private List<Questionnaire> questionnaires;
+	
+	@OneToMany(mappedBy="test")
+	private List<Reponse> responses;
+	
 
 	public Test()
 	{
