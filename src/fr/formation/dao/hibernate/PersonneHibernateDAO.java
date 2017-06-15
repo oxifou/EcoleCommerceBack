@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.ascadis.model.Utilisateur;
 import fr.formation.dao.IPersonneDAO;
 import fr.formation.model.Personne;
 
@@ -25,12 +24,11 @@ public class PersonneHibernateDAO implements IPersonneDAO {
 		try {
 			return this.entityManager.createQuery("from Personne", Personne.class).getResultList();
 		}
-		
+
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+
 		return null;
 	}
 
@@ -39,11 +37,11 @@ public class PersonneHibernateDAO implements IPersonneDAO {
 		try {
 			return this.entityManager.find(Personne.class, id);
 		}
-		
+
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return null;
 	}
 
@@ -52,17 +50,22 @@ public class PersonneHibernateDAO implements IPersonneDAO {
 		try {
 			return this.entityManager.merge(personne);
 		}
-		
+
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return personne;
 	}
 
 	@Override
-	public void delete(Personne obj) {
-		// TODO Auto-generated method stub
-		
+	public void delete(Personne personne) {
+		try {
+			this.entityManager.remove(this.entityManager.merge(personne));
+		}
+
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
