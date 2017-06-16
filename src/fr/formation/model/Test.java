@@ -30,6 +30,9 @@ public class Test implements Serializable
 	@Column(name="TEST_ID")
 	private Integer idTest;
 	
+	@Column(name="TEST_NOM")
+	private String nom;	
+	
 	@Column(name="TEST_DATE")
 	private Date date;	
 	
@@ -129,6 +132,38 @@ public class Test implements Serializable
 	public void setQuestionnaires(List<Questionnaire> questionnaires)
 	{
 		this.questionnaires = questionnaires;
+	}
+
+	/**
+	 * @return the nom
+	 */
+	public String getNom()
+	{
+		return nom;
+	}
+
+	/**
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom)
+	{
+		this.nom = nom;
+	}
+
+	/**
+	 * @return the responses
+	 */
+	public List<Reponse> getResponses()
+	{
+		return responses;
+	}
+
+	/**
+	 * @param responses the responses to set
+	 */
+	public void setResponses(List<Reponse> responses)
+	{
+		this.responses = responses;
 	}
 	
 	
