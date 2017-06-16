@@ -1,11 +1,12 @@
 package fr.formation.dao;
 import fr.formation.exception.WrongUsernameOrPasswordException;
+import fr.formation.model.Admin;
 import fr.formation.model.Personne;
 
 
 public interface IPersonneDAO extends IDAO<Personne, String> {
 
-	public Personne auth(String username, String password) throws WrongUsernameOrPasswordException;
+	public Admin auth(String username, String password) throws WrongUsernameOrPasswordException;
 
 }
 

@@ -2,7 +2,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 
-<form:form method="post" modelAttribute="user">
+<form:form method="post" modelAttribute="user" >
 	<input type="hidden" name="action" value="login" />
 	
 	<div class="input-field">

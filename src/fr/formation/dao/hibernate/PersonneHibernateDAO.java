@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import fr.formation.exception.WrongUsernameOrPasswordException;
 import fr.formation.dao.IPersonneDAO;
+import fr.formation.model.Admin;
 import fr.formation.model.Personne;
 
 @Repository("PersonneDAO")
@@ -70,15 +71,16 @@ public class PersonneHibernateDAO implements IPersonneDAO {
 		}
 	}
 	
-	public Personne auth(String username, String password) throws WrongUsernameOrPasswordException {
+	public Admin auth(String username, String password) throws WrongUsernameOrPasswordException {
 		try {
-			return this.entityManager.createQuery("from Peronne p where u.username = :username AND u.password = :password", Personne.class)
+			return this.entityManager.createQuery("from Admin a where a.username = :username AND a.password = :password", Admin.class)
 					.setParameter("username", username)
 					.setParameter("password", password)
 					.getSingleResult();
 		}
 		
 		catch (Exception e) {
+			e.printStackTrace();
 			throw new WrongUsernameOrPasswordException();
 		}
 	}

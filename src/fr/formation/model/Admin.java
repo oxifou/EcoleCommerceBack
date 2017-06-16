@@ -4,19 +4,17 @@ package fr.formation.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name = "admin"/*
-						 * , uniqueConstraints = { @UniqueConstraint(columnNames =
-						 * "CAND_USERNAME") }
-						 */)
+
 // @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 // @DiscriminatorColumn(name="CAND_TYPE",
 // discriminatorType=DiscriminatorType.INTEGER)
-
+@DiscriminatorValue("admin")
 public class Admin extends Personne implements Serializable
 {
 
