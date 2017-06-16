@@ -4,19 +4,7 @@
 
 
 <form:form method="post" modelAttribute="inscription">
-	<div class="input-field">
-		<p>
-			<form:radiobutton path="type" value="1" />
-			<label for="type1"><spring:message code="account.subscribe.form.radio.type.joueur" /></label>
-		</p>
-		
-		<p>
-			<form:radiobutton path="type" value="2" />
-			<label for="type2"><spring:message code="account.subscribe.form.radio.type.spectateur" /></label>
-		</p>
-	</div>
-  	
-  	
+	  	
 	<div class="input-field">
 		<input id="nom" type="text" class="validate" name="nom" value="${ inscription.nom }" />
 		<label for="nom"><spring:message code="account.subscribe.form.label.nom" /></label>

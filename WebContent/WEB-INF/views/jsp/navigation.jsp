@@ -11,7 +11,7 @@
 <nav>
 	<div class="nav-wrapper">
 		<div class="container">
-			<a href="#" class="brand-logo">Tetris - <spring:message code="${ titleCode }" /></a>
+			<a href="#" class="brand-logo">Test Ecole de Commerce - <spring:message code="${ titleCode }" /></a>
 			
 			
 			<ul id="nav-mobile" class="right hide-on-med-and-down">

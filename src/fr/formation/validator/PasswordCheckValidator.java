@@ -17,7 +17,7 @@ public class PasswordCheckValidator implements Validator
 	public void validate(Object obj, Errors e) {
 		Inscription myInscriptionUtilisateur = (Inscription)obj;
 		
-		if (!myInscriptionUtilisateur.getMotDePasse().equals(myInscriptionUtilisateur.getPasswordCheck())) {
+		if (!myInscriptionUtilisateur.getPassword().equals(myInscriptionUtilisateur.getPasswordCheck())) {
 			e.rejectValue("password", "pwdcheck");
 		}
 	}

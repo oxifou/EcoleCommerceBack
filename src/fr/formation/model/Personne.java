@@ -46,12 +46,11 @@ public class Personne implements Serializable
 	 */
 	public Personne()
 	{
-		super();
 	}
 
 	public String getType()
 	{
-		return type;
+		return this.type;
 	}
 
 	public void setType(String type)
@@ -61,7 +60,7 @@ public class Personne implements Serializable
 
 	public String getId()
 	{
-		return id;
+		return this.id;
 	}
 
 	public void setId(String id)
@@ -71,7 +70,7 @@ public class Personne implements Serializable
 
 	public String getNom()
 	{
-		return nom;
+		return this.nom;
 	}
 
 	public void setNom(String nom)
@@ -81,7 +80,7 @@ public class Personne implements Serializable
 
 	public String getPrenom()
 	{
-		return prenom;
+		return this.prenom;
 	}
 
 	public void setPrenom(String prenom)
