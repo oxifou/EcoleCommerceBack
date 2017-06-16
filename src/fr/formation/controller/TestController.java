@@ -42,7 +42,7 @@ public class TestController
 	}
 	
 	@RequestMapping(value={ "/edit", "/edit/{id}" }, method=RequestMethod.POST)
-	public String edit(@PathVariable(value="id", required=false) String tetriminoId, @Valid @ModelAttribute("tetrimino") Test test, BindingResult result) {
+	public String edit(@PathVariable(value="id", required=false) Integer testId, @Valid @ModelAttribute("test") Test test, BindingResult result) {
 		test = this.testDAO.save(test);
 		return "redirect:/test/edit/" + test.getIdTest();
 	}
