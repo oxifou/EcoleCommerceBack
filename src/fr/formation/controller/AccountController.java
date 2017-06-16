@@ -1,8 +1,6 @@
 package fr.formation.controller;
 
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import fr.formation.dao.IPersonneDAO;
 import fr.formation.exception.WrongUsernameOrPasswordException;
 import fr.formation.model.Admin;
-import fr.formation.model.noentity.Inscription;
-import fr.formation.validator.PasswordCheckValidator;
 
 @Controller
 @RequestMapping("/account")
@@ -41,7 +37,7 @@ public class AccountController
 					
 					session.setAttribute("utilisateur", admin);
 					session.setAttribute("username", admin.getUsername());
-					return "redirect:/home"; ///test
+					return "redirect:/test"; ///test
 				}
 			}
 			
