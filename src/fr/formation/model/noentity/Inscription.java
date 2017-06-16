@@ -1,9 +1,9 @@
 package fr.formation.model.noentity;
 
-import fr.formation.model.Personne;
+import fr.formation.model.Admin;
 
 
-public class Inscription extends Personne
+public class Inscription extends Admin
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -20,8 +20,10 @@ public class Inscription extends Personne
 	}
 	
 	
-	public void setProperties(Personne utilisateur) {
+	public void setProperties(Admin utilisateur) {
 		utilisateur.setNom(this.getNom());
 		utilisateur.setPrenom(this.getPrenom());
+		utilisateur.setMotDePasse(this.getMotDePasse());
+		utilisateur.setUserName(this.getUserName());
 	}
 }

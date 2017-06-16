@@ -15,6 +15,7 @@ import fr.formation.dao.IPersonneDAO;
 import fr.formation.exception.WrongUsernameOrPasswordException;
 import fr.formation.model.Admin;
 import fr.formation.model.noentity.Inscription;
+import fr.formation.validator.PasswordCheckValidator;
 
 @Controller
 @RequestMapping("/account")
@@ -71,15 +72,15 @@ public class AccountController
 		new PasswordCheckValidator().validate(inscriptionUtilisateur, result);
 		
 		if (!result.hasErrors()) {
-			Utilisateur myUtilisateur = null;
-			
-			switch (inscriptionUtilisateur.getType()) {
-				case 2: myUtilisateur = new Spectateur(); break;
-				default: myUtilisateur = new Joueur(); break;
-			}
+			Admin myUtilisateur = null;
+//			
+//			switch (inscriptionUtilisateur.getType()) {
+//				case 2: myUtilisateur = new Spectateur(); break;
+//				default: myUtilisateur = new Joueur(); break;
+//			}
 			
 			inscriptionUtilisateur.setProperties(myUtilisateur);
-			this.utilisateurDAO.save(myUtilisateur);
+			this.personneDAO.save(myUtilisateur);
 			
 			return "redirect:/home";
 		}
@@ -97,7 +98,7 @@ public class AccountController
 	
 	
 	@ModelAttribute("inscription")
-	public InscriptionUtilisateur initInscriptionUtilisateur() {
-		return new InscriptionUtilisateur();
+	public Inscription initInscriptionUtilisateur() {
+		return new Inscription();
 	}
 }
