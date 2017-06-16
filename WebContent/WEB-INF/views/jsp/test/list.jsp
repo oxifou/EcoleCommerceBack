@@ -25,12 +25,12 @@
 				
 				
 				<div class="card-action">
-					<a href="test/delete/${ test.id }">RETIRER</a>
-					<a href="test/edit/${ test.id }">EDITER</a>
+					<a href="test/delete/${ test.idTest }">RETIRER</a>
+					<a href="test/edit/${ test.idTest }">EDITER</a>
 				</div>
 				
 				<div class="card-reveal">
-					<span class="card-title grey-text text-darken-4">${ tetrimino.nom }<i class="material-icons right">close</i></span>
+					<span class="card-title grey-text text-darken-4">${ test.nom }<i class="material-icons right">close</i></span>
 					<table>
 						<thead>
 							<tr>
@@ -42,7 +42,7 @@
 						<tbody>
 							<tr>
 								<td>ID</td>
-								<td>${ test.id }</td>
+								<td>${ test.idTest }</td>
 							</tr>
 							
 							<tr>

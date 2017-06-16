@@ -23,7 +23,7 @@ public class TestHibernateDAO implements IDAO<Test, Integer>
 	public List<Test> findAll()
 	{
 		try {
-			return this.entityManager.createQuery("from test", Test.class).getResultList();
+			return this.entityManager.createQuery("from Test", Test.class).getResultList();
 		}
 		
 		catch (Exception e) {
