@@ -27,34 +27,34 @@ public class Admin extends Personne implements Serializable
 
 	@Column(name = "ADMIN_NAME")
 	@NotBlank
-	private String userName;
+	private String username;
 
 	@Column(name = "ADMIN_MOTDEPASSE")
 	@NotBlank
-	private String motDePasse;
+	private String password;
 
 	public Admin()
 	{
 		super();
 	}
 
-	public String getUserName()
+	public String getUsername()
 	{
-		return userName;
+		return this.username;
 	}
 
-	public void setUserName(String userName)
+	public void setUsername(String username)
 	{
-		this.userName = userName;
+		this.username = username;
 	}
 
-	public String getMotDePasse()
+	public String getPassword()
 	{
-		return motDePasse;
+		return this.password;
 	}
 
-	public void setMotDePasse(String motDePasse)
+	public void setPassword(String password)
 	{
-		this.motDePasse = motDePasse;
+		this.password = password;
 	}
 }

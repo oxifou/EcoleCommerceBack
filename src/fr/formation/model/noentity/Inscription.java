@@ -23,7 +23,7 @@ public class Inscription extends Admin
 	public void setProperties(Admin utilisateur) {
 		utilisateur.setNom(this.getNom());
 		utilisateur.setPrenom(this.getPrenom());
-		utilisateur.setMotDePasse(this.getMotDePasse());
-		utilisateur.setUserName(this.getUserName());
+		utilisateur.setPassword(this.getPassword());
+		utilisateur.setUsername(this.getUsername());
 	}
 }

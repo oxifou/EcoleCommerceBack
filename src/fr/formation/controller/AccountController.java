@@ -34,11 +34,11 @@ public class AccountController
 	public String login(@Valid @ModelAttribute("user") Admin admin, BindingResult result, Model model, HttpSession session) {
 		if ((!result.hasErrors()) || (result.getErrorCount() == 2)) {
 			try {
-				admin = (Admin) this.personneDAO.auth(admin.getUserName(),admin.getMotDePasse());
+				admin = (Admin) this.personneDAO.auth(admin.getUsername(),admin.getPassword());
 				
 				if (admin != null) {
 					session.setAttribute("utilisateur", admin);
-					session.setAttribute("username", admin.getUserName());
+					session.setAttribute("username", admin.getUsername());
 					return "redirect:/home";
 				}
 			}
