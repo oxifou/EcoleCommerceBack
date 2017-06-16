@@ -24,7 +24,7 @@ public class PropositionHibernateDAO implements IDAO<Proposition, Integer>
 	public List<Proposition> findAll()
 	{
 		try {
-			return this.entityManager.createQuery("from proposition", Proposition.class).getResultList();
+			return this.entityManager.createQuery("from Proposition", Proposition.class).getResultList();
 		}
 		
 		catch (Exception e) {

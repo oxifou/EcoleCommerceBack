@@ -23,7 +23,7 @@ public class MatiereHibernateDAO implements IDAO<Matiere, Integer>
 	public List<Matiere> findAll()
 	{
 		try {
-			return this.entityManager.createQuery("from matiere", Matiere.class).getResultList();
+			return this.entityManager.createQuery("from Matiere", Matiere.class).getResultList();
 		}
 		
 		catch (Exception e) {

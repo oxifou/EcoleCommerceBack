@@ -23,7 +23,7 @@ public class QuestionnaireHibernateDAO implements IDAO<Questionnaire, Integer>
 	public List<Questionnaire> findAll()
 	{
 		try {
-			return this.entityManager.createQuery("from questionnaire", Questionnaire.class).getResultList();
+			return this.entityManager.createQuery("from Questionnaire", Questionnaire.class).getResultList();
 		}
 		
 		catch (Exception e) {
