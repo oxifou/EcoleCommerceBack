@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- Configuration de la vue "test" -->
+	<definition name="tests" extends="base.definition">
+		<put-attribute name="title" value="account.login.title" cascade="true" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/test/list.jsp" />
+	</definition>
+	
+	<!-- Configuration de la vue "test" -->
+	<definition name="editTest" extends="base.definition">
+		<put-attribute name="titqe" value="account.login.title" cascade="true" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/test/edit.jsp" />
+	</definition>
+	
+	<!-- Configuration de la vue "test" -->
+	<definition name="addTest" extends="base.definition">
+		<put-attribute name="title" value="account.login.title" cascade="true" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/test/edit.jsp" />
+	</definition>
+</tiles-definitions>
